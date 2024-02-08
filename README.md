@@ -8,6 +8,5 @@ Game Rules:
 2. If the user inputs anything besides an alphabet (symbols, numbers), tells the
 user that they can only input an alphabet.  
   a. If the user has one or more warning left, the user should lose one 
-	warning. Tells the user the number of remaining warnings.
-<br>
+	warning. Tells the user the number of remaining warnings.<br>
   b. If the user has no remaining warnings, they should lose one guess.
