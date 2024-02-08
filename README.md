@@ -9,4 +9,5 @@ Game Rules:
 user that they can only input an alphabet.  
   a. If the user has one or more warning left, the user should lose one 
 	warning. Tells the user the number of remaining warnings.
-	b. If the user has no remaining warnings, they should lose one guess.
+<br>
+  b. If the user has no remaining warnings, they should lose one guess.
