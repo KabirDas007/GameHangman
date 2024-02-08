@@ -11,9 +11,9 @@ user that they can only input an alphabet.
 	warning. Tells the user the number of remaining warnings.<br>
   b. If the user has no remaining warnings, they should lose one guess.
 3. If the user inputs a letter that has already been guessed, prints a message
-telling the user the letter has already been guessed before.
+telling the user the letter has already been guessed before.<br>
 	a. If the user has one or more warning left, the user should lose one 
-	warning. Tells the user the number of remaining warnings.
+	warning. Tells the user the number of remaining warnings.<br>
 	b. If the user has no warnings, they should lose one guess.
 4. If the user inputs a letter that hasn’t been guessed before and the letter is in 
 the secret word, the user loses no​ guesses. 
