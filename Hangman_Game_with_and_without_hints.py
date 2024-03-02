@@ -22,6 +22,8 @@ wordlist = load_words()
 #print(wordlist)
 
 def is_word_guessed(secret_word,letters_guessed):
+# this function is used in the while loop to decide if the secret word has been guessed or not
+# based on the letters guessed by the user
     flag = 0
     for e in secret_word:
         if e in letters_guessed:
@@ -37,6 +39,8 @@ def is_word_guessed(secret_word,letters_guessed):
 
 import string        
 def get_available_letters(letters_guessed):
+# shows the letters that havent been guessed so far and hence are valid future guesses
+
     avl_lett = string.ascii_lowercase[:]
 
     for e in avl_lett:
@@ -46,6 +50,8 @@ def get_available_letters(letters_guessed):
     return(avl_lett)
     
 def get_guessed_word(secret_word,letters_guessed):
+# shows the state of the game: the letters that have been guessed correctly appear at their respective places in the secret word, and others are shown as  '_ '
+    
     display_string = ''
     for e in secret_word:
         if e in letters_guessed:
@@ -56,8 +62,10 @@ def get_guessed_word(secret_word,letters_guessed):
 
 
 def matching_with_gaps(myword ,otherword):
-    myword = myword.replace(' ','')
-    dl = []                                 #dl = discovered letters
+# tells if a word is a possible choice for the secret word based on the letters in the secret word revealed so far
+    myword = myword.replace(' ','')         #removing the space to correct the number of letters in myword.
+    dl = []                                 #dl = discovered letters  for example secret word = boobs, and myword = 'b_ _ bs', then dl = ['b','s']
+
     if len(myword) != len(otherword):
         return False
     for e in myword:
@@ -65,8 +73,8 @@ def matching_with_gaps(myword ,otherword):
             dl.append(e)
     #print(dl)
 
-    rll = []                                # rrl = revealed letters list 
-    bll = []                                #bll = blank letters list
+    rll = []                                # rrl = revealed letters indexes in the secret word 'boobs': ex rll = [0,3,4]
+    bll = []                                #bll = blank letters indices ex bll = [1,2]
 
     for i in range(len(myword)):
         if myword[i] != '_':
@@ -77,18 +85,19 @@ def matching_with_gaps(myword ,otherword):
     #print(bll)
 
     for i in rll:
-        if myword[i] == otherword[i]:
+        if myword[i] == otherword[i]:               # code to check if the revealed letters in the words matches with the letters in the other word at the same indices
             flag1 = 0
         else:
             flag1 = 1
             break
     
-    for i in bll:
-        if otherword[i] not in dl:
-            flag2 = 0
-        else:
-            flag2 = 1
-            break
+    for i in bll:                                   # code to ensure that the other word does not contain discovered letters at places other than revealed indices,
+                                                        # as that will mean that it can not be the secret word.
+            if otherword[i] not in dl:
+                flag2 = 0
+            else:
+                flag2 = 1
+                break
 
     if flag2 == 0 and flag1 == 0:
         return True
@@ -176,3 +185,4 @@ def Hangman(secret_word):
 if __name__ == '__main__':
     secret_word = choose_word(wordlist)
     Hangman(secret_word)
+
