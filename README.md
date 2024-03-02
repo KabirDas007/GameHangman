@@ -5,7 +5,7 @@ If unfamiliar with the rules of the game please read https://en.wikipedia.org/wi
 <br> 
 Game Rules: 
 1. The user starts with 3 warnings and 6 guesses.
-2. If the user inputs anything besides an alphabet (symbols, numbers), tells the
+2. If the user inputs anything besides an alphabet (symbols, numbers), tell the
 user that they can only input an alphabet.  
   	a. If the user has one or more warning left, the user should lose one 
 	warning. Tells the user the number of remaining warnings.<br>
