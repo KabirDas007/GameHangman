@@ -7,9 +7,9 @@ Game Rules:
 1. The user starts with 3 warnings and 6 guesses.
 2. If the user inputs anything besides an alphabet (symbols, numbers), tells the
 user that they can only input an alphabet.  
-  a. If the user has one or more warning left, the user should lose one 
+  	a. If the user has one or more warning left, the user should lose one 
 	warning. Tells the user the number of remaining warnings.<br>
-  b. If the user has no remaining warnings, they should lose one guess.
+  	b. If the user has no remaining warnings, they should lose one guess.
 3. If the user inputs a letter that has already been guessed, prints a message
 telling the user the letter has already been guessed before.<br>
 	a. If the user has one or more warning left, the user should lose one 
